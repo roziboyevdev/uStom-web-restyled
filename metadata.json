@@ -1,0 +1,6 @@
+{
+  "name": "uStom Masterclasses",
+  "description": "Stomatologiya sohasidagi premium jonli masterklasslar va amaliy klinik ta'lim platformasi",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
