@@ -31,31 +31,31 @@ export const Professors: React.FC<ProfessorsProps> = ({ onNavigate }) => {
   }, [search]);
 
   return (
-    <div className="flex flex-col gap-10 text-left text-[#1C1C1C]">
+    <div className="flex flex-col gap-10 text-left text-slate-900">
       
       {/* HEADER PORTAL */}
-      <div className="flex flex-col gap-2 border-b border-[#1C1C1C]/15 pb-6">
-        <span className="text-[10px] uppercase tracking-[0.25em] text-[#1C1C1C]/60 font-bold">uStom Ustozlari</span>
+      <div className="flex flex-col gap-2 border-b border-blue-100 pb-6">
+        <span className="text-[10px] uppercase tracking-[0.25em] text-blue-600 font-bold">uStom Ustozlari</span>
         <h1 
-          className="text-4xl md:text-5xl font-light font-serif text-[#1C1C1C] tracking-tight"
+          className="text-4xl md:text-5xl font-light font-serif text-slate-950 tracking-tight"
           style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
         >
-          Xalqaro darajadagi <span className="italic">professor-mutaxassislarimiz</span>
+          Xalqaro darajadagi <span className="italic text-blue-700">professor-mutaxassislarimiz</span>
         </h1>
-        <p className="text-[#1C1C1C]/75 font-light text-sm max-w-2xl mt-1 leading-relaxed">
+        <p className="text-slate-650 font-light text-sm max-w-2xl mt-1 leading-relaxed">
           Bizning barcha ma'ruzachilarimiz ko'p yillik amaliy tajribaga va ilmiy darajaga ega bo'lgan yetakchi stomatologlar hamda klinika direktorlaridir.
         </p>
       </div>
 
       {/* FILTER SEARCH INPUT */}
       <div className="relative max-w-2xl">
-        <Search className="absolute left-4 top-4 text-[#1C1C1C]/40 w-4 h-4" />
+        <Search className="absolute left-4 top-4 text-slate-450 w-4 h-4" />
         <input 
           type="text" 
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Ism, ilmiy unvon yoki mutaxassislik bo'yicha qidirish..."
-          className="w-full bg-white border border-[#1C1C1C]/10 rounded-none py-3.5 pl-11 pr-4 text-xs font-semibold placeholder-stone-400 focus:outline-none focus:border-[#1C1C1C] transition-all"
+          className="w-full bg-blue-50/20 border border-blue-100 rounded-none py-3.5 pl-11 pr-4 text-xs font-semibold placeholder-slate-400 focus:outline-none focus:border-blue-400 transition-all"
         />
       </div>
 
@@ -63,14 +63,14 @@ export const Professors: React.FC<ProfessorsProps> = ({ onNavigate }) => {
       {loading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[1, 2, 3, 4].map(i => (
-            <div key={i} className="bg-white border border-[#1C1C1C]/10 h-64 animate-pulse rounded-none" />
+            <div key={i} className="bg-white border border-blue-50 h-64 animate-pulse rounded-none" />
           ))}
         </div>
       ) : professors.length === 0 ? (
-        <div className="bg-white border border-[#1C1C1C]/10 rounded-none p-16 text-center max-w-md mx-auto w-full flex flex-col gap-4 items-center">
-          <GraduationCap className="w-10 h-10 text-[#1C1C1C]/35" />
-          <h3 className="text-lg font-serif italic text-[#1C1C1C]">Ma'ruzachilar topilmadi</h3>
-          <p className="text-[#1C1C1C]/60 text-xs font-light">
+        <div className="bg-white border border-blue-100 rounded-none p-16 text-center max-w-md mx-auto w-full flex flex-col gap-4 items-center">
+          <GraduationCap className="w-10 h-10 text-blue-500/30" />
+          <h3 className="text-lg font-serif italic text-slate-800">Ma'ruzachilar topilmadi</h3>
+          <p className="text-slate-500 text-xs font-light">
             Siz kiritgan ism yoki so'rov bo'yicha stomatologiya professorlari topilmadi.
           </p>
         </div>
@@ -79,10 +79,10 @@ export const Professors: React.FC<ProfessorsProps> = ({ onNavigate }) => {
           {professors.map((prof) => (
             <div 
               key={prof.id} 
-              className="group bg-white border border-[#1C1C1C]/10 rounded-none p-6 sm:p-8 flex flex-col sm:flex-row gap-6 hover:border-[#1C1C1C]/25 transition-all duration-300"
+              className="group bg-white border border-blue-100 rounded-none p-6 sm:p-8 flex flex-col sm:flex-row gap-6 hover:border-blue-300 hover:shadow-premium transition-all duration-300"
             >
               {/* Image Container */}
-              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-none overflow-hidden shrink-0 bg-stone-50 relative mx-auto sm:mx-0 border border-[#1C1C1C]/10">
+              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-none overflow-hidden shrink-0 bg-slate-50 relative mx-auto sm:mx-0 border border-blue-100">
                 <img 
                   src={prof.image} 
                   alt={prof.name} 
@@ -95,17 +95,17 @@ export const Professors: React.FC<ProfessorsProps> = ({ onNavigate }) => {
                 <div className="flex flex-col gap-1.5">
                   <div className="flex flex-col gap-0.5">
                     <h3 
-                      className="text-lg font-bold text-[#1C1C1C] transition-colors"
+                      className="text-lg font-bold text-slate-950 transition-colors group-hover:text-blue-700"
                       style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                     >
                       {prof.name}
                     </h3>
-                    <p className="text-xs font-serif italic text-stone-500 leading-relaxed min-h-[2.5rem] line-clamp-2">
+                    <p className="text-xs font-serif italic text-slate-500 leading-relaxed min-h-[2.5rem] line-clamp-2">
                       {prof.title}
                     </p>
                   </div>
 
-                  <p className="text-[#1C1C1C]/75 text-xs font-light line-clamp-2 leading-relaxed">
+                  <p className="text-slate-650 text-xs font-light line-clamp-2 leading-relaxed">
                     {prof.bio}
                   </p>
 
@@ -116,32 +116,32 @@ export const Professors: React.FC<ProfessorsProps> = ({ onNavigate }) => {
                       </Badge>
                     ))}
                     {prof.specialties.length > 3 && (
-                      <span className="text-[10px] text-stone-400 font-bold self-center">+{prof.specialties.length - 3}</span>
+                      <span className="text-[10px] text-slate-400 font-bold self-center">+{prof.specialties.length - 3}</span>
                     )}
                   </div>
                 </div>
 
-                <div className="border-t border-[#1C1C1C]/10 pt-4 flex flex-col sm:flex-row gap-3 items-center justify-between mt-auto">
-                  <div className="flex gap-2 text-stone-400 text-xs font-mono">
+                <div className="border-t border-blue-50 pt-4 flex flex-col sm:flex-row gap-3 items-center justify-between mt-auto">
+                  <div className="flex gap-2 text-slate-400 text-xs font-mono">
                     {prof.socials?.instagram && (
                       <a 
                         href={prof.socials.instagram} 
                         target="_blank" 
                         rel="noreferrer"
-                        className="hover:text-[#1C1C1C] transition-colors"
+                        className="hover:text-blue-600 transition-colors"
                       >
                         Instagram
                       </a>
                     )}
                     {prof.socials?.linkedin && (
-                      <span className="text-stone-200">|</span>
+                      <span className="text-slate-200">|</span>
                     )}
                     {prof.socials?.linkedin && (
                       <a 
                         href={prof.socials.linkedin} 
                         target="_blank" 
                         rel="noreferrer"
-                        className="hover:text-[#1C1C1C] transition-colors"
+                        className="hover:text-blue-600 transition-colors"
                       >
                         LinkedIn
                       </a>
@@ -150,10 +150,10 @@ export const Professors: React.FC<ProfessorsProps> = ({ onNavigate }) => {
                   
                   <button 
                     onClick={() => onNavigate('professor-detail', { id: prof.id })}
-                    className="inline-flex items-center gap-1 text-[11px] uppercase tracking-wider font-bold text-[#1C1C1C] hover:underline cursor-pointer"
+                    className="inline-flex items-center gap-1 text-[11px] uppercase tracking-wider font-bold text-blue-600 hover:text-blue-700 hover:underline cursor-pointer"
                   >
                     Profil
-                    <ChevronRight className="w-3.5 h-3.5" />
+                    <ChevronRight className="w-3.5 h-3.5 font-bold" />
                   </button>
                 </div>
               </div>

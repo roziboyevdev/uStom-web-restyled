@@ -47,24 +47,24 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseId, onNavigate
 
   if (loading) {
     return (
-      <div className="py-24 text-center max-w-sm mx-auto flex flex-col items-center justify-center gap-4 text-[#1C1C1C]">
-        <Loader2 className="w-10 h-10 text-[#1C1C1C] animate-spin" />
-        <span className="text-[11px] font-mono uppercase tracking-widest text-[#1C1C1C]/60">Masterklass ma'lumotlari yuklanmoqda...</span>
+      <div className="py-24 text-center max-w-sm mx-auto flex flex-col items-center justify-center gap-4 text-slate-800">
+        <Loader2 className="w-10 h-10 text-blue-600 animate-spin" />
+        <span className="text-[11px] font-mono uppercase tracking-widest text-slate-400">Masterklass ma'lumotlari yuklanmoqda...</span>
       </div>
     );
   }
 
   if (!course) {
     return (
-      <div className="bg-white border border-[#1C1C1C]/10 rounded-none p-16 text-center max-w-md mx-auto flex flex-col gap-6 items-center">
+      <div className="bg-white border border-blue-100 rounded-none p-16 text-center max-w-md mx-auto flex flex-col gap-6 items-center">
         <AlertCircle className="w-10 h-10 text-red-500" />
-        <h2 className="text-xl font-serif italic text-[#1C1C1C]">Masterklass topilmadi</h2>
-        <p className="text-[#1C1C1C]/60 text-xs font-light">
+        <h2 className="text-xl font-serif italic text-slate-900">Masterklass topilmadi</h2>
+        <p className="text-slate-500 text-xs font-light">
           Siz so'ragan yoki kirmoqchi bo'lgan stomatologiya o'quv kursi bazamizda mavjud emas yoki o'chirilgan bo'lishi mumkin.
         </p>
         <button 
           onClick={() => onNavigate('courses')}
-          className="bg-[#1C1C1C] text-white text-[10px] uppercase font-bold tracking-wider px-6 py-3 rounded-none cursor-pointer"
+          className="bg-blue-600 hover:bg-blue-700 text-white text-[10px] uppercase font-bold tracking-wider px-6 py-3 rounded-none cursor-pointer"
         >
           Katalogga qaytish
         </button>
@@ -97,24 +97,24 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseId, onNavigate
   };
 
   return (
-    <div className="flex flex-col gap-10 text-left text-[#1C1C1C]">
+    <div className="flex flex-col gap-10 text-left text-slate-900">
       
       {/* 1. TOP BREADCRUMB / GO BACK ACTIONS */}
-      <div className="flex items-center justify-between border-b border-[#1C1C1C]/10 pb-4">
+      <div className="flex items-center justify-between border-b border-blue-100 pb-4">
         <button 
           onClick={() => onNavigate('courses')}
-          className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-[#1C1C1C]/60 hover:text-[#1C1C1C] cursor-pointer group transition-colors"
+          className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-blue-600 hover:text-blue-700 cursor-pointer group transition-colors"
         >
           <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-0.75" />
           Katalogga qaytish
         </button>
-        <div className="text-[10px] font-mono text-[#1C1C1C]/45 uppercase tracking-widest bg-stone-100 p-1.5 px-3 border border-[#1C1C1C]/10">
+        <div className="text-[10px] font-mono text-slate-450 uppercase tracking-widest bg-blue-50/40 p-1.5 px-3 border border-blue-100">
           ID: {course.id.substring(0, 8)}
         </div>
       </div>
 
       {/* 2. DYNAMIC INTENDED FEATURE HERO BANNER - MINIMALIST GRACE */}
-      <section className="relative h-64 sm:h-80 md:h-96 rounded-none overflow-hidden bg-[#1C1C1C]">
+      <section className="relative h-64 sm:h-80 md:h-96 rounded-none overflow-hidden bg-slate-900">
         <img 
           src={course.image} 
           alt={course.title} 
@@ -144,42 +144,42 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseId, onNavigate
         <div className="lg:col-span-8 flex flex-col gap-10">
           
           {/* COURSE CONTENT OVERVIEW */}
-          <div className="bg-white border border-[#1C1C1C]/10 rounded-none p-6 md:p-8 flex flex-col gap-4">
+          <div className="bg-white border border-blue-100 rounded-none p-6 md:p-8 flex flex-col gap-4">
             <h2 
-              className="text-xl font-bold font-serif text-[#1C1C1C]"
+              className="text-xl font-bold font-serif text-slate-950"
               style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             >
-              Masterklass haqida <span className="italic">batafsil</span>
+              Masterklass haqida <span className="italic text-blue-700">batafsil</span>
             </h2>
-            <p className="text-[#1C1C1C]/80 text-sm font-light leading-relaxed whitespace-pre-line">
+            <p className="text-slate-750 text-sm font-light leading-relaxed whitespace-pre-line">
               {course.fullDesc}
             </p>
           </div>
 
           {/* AGENDA TIMELINE LAYOUT */}
           {course.agenda && course.agenda.length > 0 && (
-            <div className="bg-white border border-[#1C1C1C]/10 rounded-none p-6 md:p-8 flex flex-col gap-6">
+            <div className="bg-white border border-blue-100 rounded-none p-6 md:p-8 flex flex-col gap-6">
               <h2 
-                className="text-xl font-bold font-serif text-[#1C1C1C] flex items-center gap-2"
+                className="text-xl font-bold font-serif text-slate-900 flex items-center gap-2"
                 style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
               >
-                <Clock className="w-5 h-5 text-[#1C1C1C]/65" />
-                Kun tartibi va <span className="italic">o'quv rejasi</span>
+                <Clock className="w-5 h-5 text-blue-600" />
+                Kun tartibi va <span className="italic text-blue-700">o'quv rejasi</span>
               </h2>
               
-              <div className="flex flex-col gap-0.5 mt-2 relative pl-6 border-l border-[#1C1C1C]/15">
+              <div className="flex flex-col gap-0.5 mt-2 relative pl-6 border-l border-blue-100">
                 {course.agenda.map((item, index) => (
                   <div key={index} className="relative pb-6 last:pb-0">
                     {/* Circle indicators */}
-                    <div className="absolute -left-[1.78rem] top-1.5 w-3.5 h-3.5 rounded-none bg-white border border-[#1C1C1C] flex items-center justify-center">
-                      <div className="w-1.5 h-1.5 bg-[#1C1C1C]" />
+                    <div className="absolute -left-[1.78rem] top-1.5 w-3.5 h-3.5 rounded-none bg-white border border-blue-500 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 bg-blue-600" />
                     </div>
                     
                     <div className="flex flex-col sm:flex-row sm:items-baseline gap-2.5">
-                      <span className="text-[10.5px] font-mono font-bold text-[#1C1C1C] shrink-0 bg-[#FAF9F6] p-1 px-2.5 border border-[#1C1C1C]/10 tracking-widest uppercase">
+                      <span className="text-[10.5px] font-mono font-bold text-blue-700 shrink-0 bg-blue-50/40 p-1 px-2.5 border border-blue-100/60 tracking-widest uppercase">
                         {item.time}
                       </span>
-                      <p className="text-sm font-bold text-[#1C1C1C]/90">
+                      <p className="text-sm font-bold text-slate-800">
                         {item.activity}
                       </p>
                     </div>
@@ -191,34 +191,34 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseId, onNavigate
 
           {/* TEACHING PROFESSOR DESCRIPTION CARD */}
           {course.professor && (
-            <div className="bg-white border border-[#1C1C1C]/10 rounded-none p-8 flex flex-col gap-6">
+            <div className="bg-white border border-blue-100 rounded-none p-8 flex flex-col gap-6">
               <h2 
-                className="text-xl font-bold font-serif text-[#1C1C1C] flex items-center gap-2"
+                className="text-xl font-bold font-serif text-slate-900 flex items-center gap-2"
                 style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
               >
-                <GraduationCap className="w-5 h-5 text-[#1C1C1C]/65" />
-                Dars beruvchi <span className="italic">muallif-ustoz</span>
+                <GraduationCap className="w-5 h-5 text-blue-600" />
+                Dars beruvchi <span className="italic text-blue-700">muallif-ustoz</span>
               </h2>
               
               <div className="flex flex-col md:flex-row items-center md:items-start gap-6 pt-2">
                 <img 
                   src={course.professor.image} 
                   alt={course.professor.name} 
-                  className="w-24 h-24 sm:w-28 sm:h-28 rounded-none object-cover grayscale border border-[#1C1C1C]/10 shrink-0"
+                  className="w-24 h-24 sm:w-28 sm:h-28 rounded-none object-cover grayscale border border-blue-100 shrink-0"
                 />
                 
                 <div className="flex flex-col gap-3 text-center md:text-left self-stretch">
                   <div className="flex flex-col gap-0.5">
                     <h3 
-                      className="text-lg font-bold text-[#1C1C1C]"
+                      className="text-lg font-bold text-slate-900"
                       style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                     >
                       {course.professor.name}
                     </h3>
-                    <p className="text-xs font-serif italic text-stone-500 leading-normal">{course.professor.title}</p>
+                    <p className="text-xs font-serif italic text-slate-500 leading-normal">{course.professor.title}</p>
                   </div>
                   
-                  <p className="text-[#1C1C1C]/75 text-xs font-light leading-relaxed">
+                  <p className="text-slate-650 text-xs font-light leading-relaxed">
                     {course.professor.bio}
                   </p>
 
@@ -232,7 +232,7 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseId, onNavigate
 
                   <button 
                     onClick={() => onNavigate('professor-detail', { id: course.professor?.id })}
-                    className="self-center md:self-start inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider font-bold text-[#1C1C1C] hover:underline cursor-pointer pt-2"
+                    className="self-center md:self-start inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider font-bold text-blue-600 hover:text-blue-700 hover:underline cursor-pointer pt-2"
                   >
                     Ustozning barcha darslariga o'tish
                     <ChevronRight className="w-3.5 h-3.5" />
@@ -248,46 +248,46 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseId, onNavigate
         <div className="lg:col-span-4 flex flex-col gap-8">
           
           {/* MAIN CHECKLIST SIDEBAR CONTAINER */}
-          <div className="bg-white border border-[#1C1C1C]/15 rounded-none p-6 flex flex-col gap-6 sticky top-24">
+          <div className="bg-white border border-blue-150 rounded-none p-6 flex flex-col gap-6 sticky top-24 shadow-premium">
             
             <div className="flex flex-col gap-1 text-center md:text-left">
-              <span className="text-[10px] uppercase tracking-[0.25em] text-[#1C1C1C]/45 font-bold font-mono">Dars Narxi</span>
+              <span className="text-[10px] uppercase tracking-[0.25em] text-slate-450 font-bold font-mono">Dars Narxi</span>
               <div className="flex items-baseline justify-center md:justify-start gap-1">
-                <span className="text-3xl font-light font-serif text-[#1C1C1C]">{course.price}</span>
-                <span className="text-base font-normal font-mono text-[#1C1C1C]/60 uppercase">{course.currency}</span>
+                <span className="text-3xl font-light font-serif text-blue-600">{course.price}</span>
+                <span className="text-base font-normal font-mono text-slate-400 uppercase">{course.currency}</span>
               </div>
             </div>
 
-            <div className="border-t border-[#1C1C1C]/10 pt-4 flex flex-col gap-4 text-xs text-[#1C1C1C]/80 font-mono">
+            <div className="border-t border-blue-100 pt-4 flex flex-col gap-4 text-xs text-slate-700 font-mono">
               <div className="flex items-center gap-3">
-                <Calendar className="w-4 h-4 text-[#1C1C1C]/60" />
+                <Calendar className="w-4 h-4 text-blue-500 opacity-80" />
                 <div className="flex flex-col">
-                  <span className="text-[9px] font-bold text-[#1C1C1C]/45 uppercase tracking-widest font-mono">Sana / Muddat</span>
-                  <span className="text-[#1C1C1C] text-xs font-semibold">{course.date}</span>
+                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest font-mono">Sana / Muddat</span>
+                  <span className="text-slate-800 text-xs font-semibold">{course.date}</span>
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <Clock className="w-4 h-4 text-[#1C1C1C]/60" />
+                <Clock className="w-4 h-4 text-blue-500 opacity-80" />
                 <div className="flex flex-col">
-                  <span className="text-[9px] font-bold text-[#1C1C1C]/45 uppercase tracking-widest font-mono">Vaqt va davomiyligi</span>
-                  <span className="text-[#1C1C1C] text-xs font-semibold">{course.time}</span>
+                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest font-mono">Vaqt va davomiyligi</span>
+                  <span className="text-slate-800 text-xs font-semibold">{course.time}</span>
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <MapPin className="w-4 h-4 text-[#1C1C1C]/60 shrink-0" />
+                <MapPin className="w-4 h-4 text-blue-500 opacity-80 shrink-0" />
                 <div className="flex flex-col">
-                  <span className="text-[9px] font-bold text-[#1C1C1C]/45 uppercase tracking-widest font-mono">O'tkazilish joyi</span>
-                  <span className="text-[#1C1C1C] text-xs font-semibold leading-normal">{course.location}</span>
+                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest font-mono">O'tkazilish joyi</span>
+                  <span className="text-slate-800 text-xs font-semibold leading-normal">{course.location}</span>
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <Users className="w-4 h-4 text-[#1C1C1C]/60" />
+                <Users className="w-4 h-4 text-blue-500 opacity-80" />
                 <div className="flex flex-col">
-                  <span className="text-[9px] font-bold text-[#1C1C1C]/45 uppercase tracking-widest font-mono">O'rinlar soni</span>
-                  <span className="text-[#1C1C1C] text-xs font-semibold">
+                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest font-mono">O'rinlar soni</span>
+                  <span className="text-slate-800 text-xs font-semibold">
                     Jami: {course.totalSeats} ta / {course.remainingSeats > 0 ? `Qolgan: ${course.remainingSeats} ta` : 'Hamma o\'rinlar to\'lgan'}
                   </span>
                 </div>
@@ -296,26 +296,26 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseId, onNavigate
 
             {/* ENROLLMENT SUCCESS BOARD */}
             {enrollSuccess ? (
-              <div className="border border-[#1C1C1C] bg-[#FAF9F6] p-5 flex flex-col gap-4">
+              <div className="border border-blue-600 bg-blue-50/45 p-5 flex flex-col gap-4">
                 <div className="flex gap-2 text-left">
-                  <CheckCircle className="w-5 h-5 text-green-700 shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-blue-700 shrink-0" />
                   <div className="flex flex-col">
-                    <span className="text-xs font-bold uppercase tracking-wider text-green-800 leading-tight">Muvaffaqiyatli ro'yxatdan o'tildi!</span>
-                    <span className="text-[11px] font-light text-stone-600 mt-1 leading-relaxed">
+                    <span className="text-xs font-bold uppercase tracking-wider text-blue-800 leading-tight">Muvaffaqiyatli ro'yxatdan o'tildi!</span>
+                    <span className="text-[11px] font-light text-slate-600 mt-1 leading-relaxed">
                       Siz darsga onlayn yozildingiz. Shaxsiy profilingizga o'tib barcha yozilgan darslarni ko'rishingiz va dars materiallari bilan tanishishingiz mumkin.
                     </span>
                   </div>
                 </div>
                 <button 
                   onClick={() => onNavigate('profile')}
-                  className="w-full bg-[#1C1C1C] text-white py-2.5 font-bold hover:bg-[#1C1C1C]/90 text-[10px] uppercase tracking-widest cursor-pointer flex items-center justify-center gap-1"
+                  className="w-full bg-gradient-to-r from-blue-700 to-blue-600 text-white py-2.5 font-bold hover:from-blue-600 hover:to-sky-550 text-[10px] uppercase tracking-widest cursor-pointer flex items-center justify-center gap-1 border-none shadow-md"
                 >
                   Shaxsiy kabinetga o'tish
                   <ChevronRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             ) : (
-              <div className="border-t border-[#1C1C1C]/10 pt-4 flex flex-col gap-3.5">
+              <div className="border-t border-blue-100 pt-4 flex flex-col gap-3.5">
                 
                 {/* Error messages if any */}
                 {enrollError && (
@@ -331,10 +331,10 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseId, onNavigate
                   disabled={enrolling || isAlreadyEnrolled || (isFull && !isAlreadyEnrolled)}
                   className={`w-full py-4 text-xs font-bold tracking-[0.2em] transition-all uppercase cursor-pointer rounded-none border ${
                     isAlreadyEnrolled
-                      ? 'bg-transparent text-green-700 border-green-300 cursor-not-allowed shadow-none'
+                      ? 'bg-transparent text-blue-700 border-blue-300 cursor-not-allowed shadow-none'
                       : isFull
-                      ? 'bg-stone-100 text-stone-400 border-stone-200 cursor-not-allowed shadow-none'
-                      : 'bg-[#1C1C1C] text-[white] hover:bg-[#1C1C1C]/90 border-[#1C1C1C]'
+                      ? 'bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed shadow-none'
+                      : 'bg-gradient-to-r from-blue-700 to-blue-600 text-white hover:from-blue-600 hover:to-sky-500 border-blue-600 shadow-md hover:shadow-lg'
                   }`}
                 >
                   {enrolling ? (
@@ -351,14 +351,14 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseId, onNavigate
                 </button>
 
                 {isAlreadyEnrolled && (
-                  <div className="text-[10px] text-stone-600 text-center font-serif italic py-2.5 border-t border-[#1C1C1C]/10">
+                  <div className="text-[10px] text-slate-500 text-center font-serif italic py-2.5 border-t border-blue-100">
                     Siz dars ishtirokchisiz! To'lov va dars ishtirok etishi havolasi uchun biz sizga telefon qilamiz.
                   </div>
                 )}
 
                 {!isAlreadyEnrolled && !isFull && (
-                  <div className="flex items-center justify-center gap-1 text-[9.5px] font-mono text-[#1C1C1C]/45 uppercase tracking-widest mt-1">
-                    <Shield className="w-3.5 h-3.5" />
+                  <div className="flex items-center justify-center gap-1 text-[9.5px] font-mono text-slate-400 uppercase tracking-widest mt-1">
+                    <Shield className="w-3.5 h-3.5 text-blue-500 opacity-80" />
                     <span>LITSENZIYALANGAN MARKAziY TA'LIM</span>
                   </div>
                 )}
@@ -374,12 +374,12 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseId, onNavigate
 
       {/* 4. DETAILS - RELATED/OTHER RECOMMENDED MASTERCLASSES */}
       {relatedCourses.length > 0 && (
-        <section className="border-t border-[#1C1C1C]/15 pt-12 flex flex-col gap-6.5">
+        <section className="border-t border-blue-100 pt-12 flex flex-col gap-6.5">
           <h2 
-            className="text-2xl font-light font-serif text-[#1C1C1C]"
+            className="text-2xl font-light font-serif text-slate-900"
             style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
           >
-            Sizga yoqishi mumkin bo'lgan <span className="italic">darslar</span>
+            Sizga yoqishi mumkin bo'lgan <span className="italic text-blue-700">darslar</span>
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -387,26 +387,26 @@ export const CourseDetail: React.FC<CourseDetailProps> = ({ courseId, onNavigate
               <div 
                 key={rc.id} 
                 onClick={() => onNavigate('course-detail', { id: rc.id })}
-                className="group cursor-pointer bg-white border border-[#1C1C1C]/10 p-4 rounded-none flex flex-col sm:flex-row gap-4 hover:border-[#1C1C1C]/25 transition-all duration-300 text-left"
+                className="group cursor-pointer bg-white border border-blue-100 p-4 rounded-none flex flex-col sm:flex-row gap-4 hover:border-blue-300 hover:shadow-premium transition-all duration-300 text-left"
               >
-                <div className="w-full sm:w-36 h-24 rounded-none overflow-hidden shrink-0 bg-stone-150 border border-[#1C1C1C]/10">
+                <div className="w-full sm:w-36 h-24 rounded-none overflow-hidden shrink-0 bg-blue-50/15 border border-blue-100">
                   <img src={rc.image} alt={rc.title} className="w-full h-full object-cover grayscale opacity-90 transition-transform duration-500 group-hover:scale-102 group-hover:grayscale-0" />
                 </div>
                 <div className="flex flex-col justify-between py-1 flex-1 min-w-0">
                   <div className="flex flex-col gap-1.5">
                     <h3 
-                      className="text-sm font-bold text-[#1C1C1C] line-clamp-1 group-hover:underline transition-colors"
+                      className="text-sm font-bold text-slate-800 line-clamp-1 group-hover:text-blue-700 group-hover:underline transition-colors"
                       style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                     >
                       {rc.title}
                     </h3>
-                    <p className="text-[11.5px] font-light text-[#1C1C1C]/75 line-clamp-2 leading-snug">
+                    <p className="text-[11.5px] font-light text-slate-500 line-clamp-2 leading-snug">
                       {rc.shortDesc}
                     </p>
                   </div>
-                  <div className="flex items-center justify-between text-[10px] font-mono mt-2 text-[#1C1C1C]/60 pt-2 border-t border-[#1C1C1C]/5">
+                  <div className="flex items-center justify-between text-[10px] font-mono mt-2 text-slate-400 pt-2 border-t border-blue-50">
                     <span>{rc.date}</span>
-                    <span className="font-bold font-serif text-[#1C1C1C]">{rc.price} USD</span>
+                    <span className="font-bold font-serif text-blue-600">{rc.price} USD</span>
                   </div>
                 </div>
               </div>
